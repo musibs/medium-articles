@@ -23,6 +23,6 @@
     </properties>
 
     <modules>
-		<module>spring-webservice-core</module>
+		<module>spring-soap-webservice</module>
     </modules>
 </project>

@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<wsdl:definitions name="Calculator"
+                  targetNamespace="http://medium.com/services/calculator"
+                  xmlns:tns="http://medium.com/services/calculator"
+                  xmlns:types="http://medium.com/types/calculator"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+    <wsdl:types>
+        <xsd:schema
+                targetNamespace="http://medium.com/types/calculator"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                elementFormDefault="qualified"
+                attributeFormDefault="unqualified"
+                version="1.0">
+
+            <xsd:element name="input">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="number1" type="xsd:int" />
+                        <xsd:element name="number2" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element name="output">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="result" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+
+    <wsdl:message name="Input">
+        <wsdl:part name="inputData" element="types:input" />
+    </wsdl:message>
+
+    <wsdl:message name="Output">
+        <wsdl:part name="outputData" element="types:output" />
+    </wsdl:message>
+
+    <wsdl:portType name="Calculator_PortType">
+        <wsdl:operation name="addition">
+            <wsdl:input message="tns:Input" />
+            <wsdl:output message="tns:Output" />
+        </wsdl:operation>
+        <wsdl:operation name="substraction">
+            <wsdl:input message="tns:Input" />
+            <wsdl:output message="tns:Output" />
+        </wsdl:operation>
+        <wsdl:operation name="multiplication">
+            <wsdl:input message="tns:Input" />
+            <wsdl:output message="tns:Output" />
+        </wsdl:operation>
+        <wsdl:operation name="division">
+            <wsdl:input message="tns:Input" />
+            <wsdl:output message="tns:Output" />
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="Calculator_SoapBinding" type="tns:Calculator_PortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+        <wsdl:operation name="addition">
+            <soap:operation soapAction="http://medium.com/services/calculator/addition" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="substraction">
+            <soap:operation soapAction="http://medium.com/services/calculator/substraction" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="multiplication">
+            <soap:operation soapAction="http://medium.com/services/calculator/multiplication" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="division">
+            <soap:operation soapAction="http://medium.com/services/calculator/division" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="Calculator_Service">
+        <wsdl:documentation>Calculator Service</wsdl:documentation>
+        <wsdl:port name="Calculator_PortType" binding="tns:Calculator_SoapBinding">
+            <soap:address location="http://localhost:9091/medium/ws/calculator" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
