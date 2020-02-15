@@ -22,10 +22,10 @@ public class SoapWebServiceConfiguration extends WsConfigurerAdapter {
         return new ServletRegistrationBean<>(messageDispatcherServlet, "/medium/ws/*");
     }
 
-    @Bean(name = "calculator")
+    @Bean(name = "calculatorDemo")
     public Wsdl11Definition wsdl11Definition(){
         SimpleWsdl11Definition simpleWsdl11Definition = new SimpleWsdl11Definition();
-        simpleWsdl11Definition.setWsdl(new ClassPathResource("/wsdl/calculator"));
+        simpleWsdl11Definition.setWsdl(new ClassPathResource("/wsdl/calculator.wsdl"));
         return simpleWsdl11Definition;
     }
 }

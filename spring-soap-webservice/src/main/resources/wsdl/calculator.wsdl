@@ -14,7 +14,34 @@
                 attributeFormDefault="unqualified"
                 version="1.0">
 
-            <xsd:element name="input">
+            <xsd:element name="AdditionInput">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="number1" type="xsd:int" />
+                        <xsd:element name="number2" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element name="SubtractionInput">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="number1" type="xsd:int" />
+                        <xsd:element name="number2" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element name="MultiplicationInput">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="number1" type="xsd:int" />
+                        <xsd:element name="number2" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element name="DivisionInput">
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="number1" type="xsd:int" />
@@ -33,30 +60,54 @@
         </xsd:schema>
     </wsdl:types>
 
-    <wsdl:message name="Input">
-        <wsdl:part name="inputData" element="types:input" />
+    <wsdl:message name="AdditionInput">
+        <wsdl:part name="inputData" element="types:AdditionInput" />
     </wsdl:message>
 
-    <wsdl:message name="Output">
+    <wsdl:message name="AdditionOutput">
+        <wsdl:part name="outputData" element="types:output" />
+    </wsdl:message>
+
+    <wsdl:message name="SubtractionInput">
+        <wsdl:part name="inputData" element="types:SubtractionInput" />
+    </wsdl:message>
+
+    <wsdl:message name="SubtractionOutput">
+        <wsdl:part name="outputData" element="types:output" />
+    </wsdl:message>
+
+    <wsdl:message name="MultiplicationInput">
+        <wsdl:part name="inputData" element="types:MultiplicationInput" />
+    </wsdl:message>
+
+    <wsdl:message name="MultiplicationOutput">
+        <wsdl:part name="outputData" element="types:output" />
+    </wsdl:message>
+
+    <wsdl:message name="DivisionInput">
+        <wsdl:part name="inputData" element="types:DivisionInput" />
+    </wsdl:message>
+
+    <wsdl:message name="DivisionOutput">
         <wsdl:part name="outputData" element="types:output" />
     </wsdl:message>
 
     <wsdl:portType name="Calculator_PortType">
         <wsdl:operation name="addition">
-            <wsdl:input message="tns:Input" />
-            <wsdl:output message="tns:Output" />
+            <wsdl:input message="tns:AdditionInput" />
+            <wsdl:output message="tns:AdditionOutput" />
         </wsdl:operation>
-        <wsdl:operation name="substraction">
-            <wsdl:input message="tns:Input" />
-            <wsdl:output message="tns:Output" />
+        <wsdl:operation name="subtraction">
+            <wsdl:input message="tns:SubtractionInput" />
+            <wsdl:output message="tns:SubtractionOutput" />
         </wsdl:operation>
         <wsdl:operation name="multiplication">
-            <wsdl:input message="tns:Input" />
-            <wsdl:output message="tns:Output" />
+            <wsdl:input message="tns:MultiplicationInput" />
+            <wsdl:output message="tns:MultiplicationOutput" />
         </wsdl:operation>
         <wsdl:operation name="division">
-            <wsdl:input message="tns:Input" />
-            <wsdl:output message="tns:Output" />
+            <wsdl:input message="tns:DivisionInput" />
+            <wsdl:output message="tns:DivisionOutput" />
         </wsdl:operation>
     </wsdl:portType>
 
@@ -71,7 +122,7 @@
                 <soap:body use="literal" />
             </wsdl:output>
         </wsdl:operation>
-        <wsdl:operation name="substraction">
+        <wsdl:operation name="subtraction">
             <soap:operation soapAction="http://medium.com/services/calculator/substraction" />
             <wsdl:input>
                 <soap:body use="literal" />
@@ -103,7 +154,7 @@
     <wsdl:service name="Calculator_Service">
         <wsdl:documentation>Calculator Service</wsdl:documentation>
         <wsdl:port name="Calculator_PortType" binding="tns:Calculator_SoapBinding">
-            <soap:address location="http://localhost:9091/medium/ws/calculator" />
+            <soap:address location="http://localhost:9091/medium/ws/calculatorDemo" />
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>

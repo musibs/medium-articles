@@ -7,10 +7,11 @@
         <artifactId>medium-articles</artifactId>
         <version>1.0.0</version>
     </parent>
-    <groupId>io.tbc.spring.ws</groupId>
-    <artifactId>spring-soap-webservice</artifactId>
-    <name>spring-soap-webservice-payload</name>
-    <description>Spring SOAP Web Service demo using PayloadRoot</description>
+    <groupId>io.tbc.spring.ws.soapaction</groupId>
+    <artifactId>spring-soap-ws-soapaction</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>spring-soap-ws-soapaction</name>
+    <description>Spring SOAP Web Service With SoapAction</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -22,6 +23,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web-services</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

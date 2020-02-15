@@ -1,0 +1,8 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns2:output xmlns:ns2="http://medium.com/types/calculator">
+            <ns2:result>6</ns2:result>
+        </ns2:output>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
