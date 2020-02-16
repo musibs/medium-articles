@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.4.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>io.tbc.spring.boot</groupId>
+    <artifactId>spring-boot-wildfly-demo</artifactId>
+    <version>1.0.0</version>
+    <packaging>war</packaging>
+    <name>spring-boot-wildfly-demo</name>
+    <description>Spring Boot Wildfly Demo</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <deploy.jboss.host>127.0.0.1</deploy.jboss.host>
+        <deploy.jboss.port>9990</deploy.jboss.port>
+        <deploy.jboss.username>wildfly</deploy.jboss.username>
+        <deploy.jboss.password>wildfly</deploy.jboss.password>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>2.0.2.Final</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <filename>${project.build.finalName}.war</filename>
+                    <hostname>${deploy.jboss.host}</hostname>
+                    <port>${deploy.jboss.port}</port>
+                    <username>${deploy.jboss.username}</username>
+                    <password>${deploy.jboss.password}</password>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
