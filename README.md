@@ -1,2 +1,2 @@
 # Medium Articles
-Repository for all Medium articles.
+Source code repository for all Medium articles.
