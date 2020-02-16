@@ -24,5 +24,6 @@
 
     <modules>
 		<module>spring-soap-webservice</module>
+        <module>spring-boot-wildfly-demo</module>
     </modules>
 </project>
