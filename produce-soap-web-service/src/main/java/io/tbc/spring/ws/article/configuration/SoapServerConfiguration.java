@@ -1,6 +1,5 @@
-package io.tbc.spring.ws.beer.configuration;
+package io.tbc.spring.ws.article.configuration;
 
-import io.tbc.spring.ws.beer.server.ArticleEndpoint;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package io.tbc.spring.ws.beer.server;
+package io.tbc.spring.ws.article.server;
 
 import https.medium_com.article.Article;
 import https.medium_com.article.GetArticleRequest;
