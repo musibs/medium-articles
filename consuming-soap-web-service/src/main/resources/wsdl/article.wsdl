@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="https://medium.com/article" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://medium.com/article" targetNamespace="https://medium.com/article">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://medium.com/article">
+
+    <xsd:element name="getArticleRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="id" type="xsd:int"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="getArticleResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="article" type="tns:article"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="article">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/>
+            <xsd:element name="name" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getArticleResponse">
+    <wsdl:part element="tns:getArticleResponse" name="getArticleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getArticleRequest">
+    <wsdl:part element="tns:getArticleRequest" name="getArticleRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ArticlePort">
+    <wsdl:operation name="getArticle">
+      <wsdl:input message="tns:getArticleRequest" name="getArticleRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getArticleResponse" name="getArticleResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ArticlePortSoap11" type="tns:ArticlePort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getArticle">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getArticleRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getArticleResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ArticlePortService">
+    <wsdl:port binding="tns:ArticlePortSoap11" name="ArticlePortSoap11">
+      <soap:address location="/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
