@@ -3,8 +3,8 @@
                   targetNamespace="http://medium.com/services/travelAgent"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-                  xmlns:tns="http://medium.com/types/travelAgent">
-
+                  xmlns:tns="http://medium.com/services/travelAgent"
+                  xmlns:types="http://medium.com/types/travelAgent">
 
     <wsdl:types>
         <xsd:schema
@@ -13,7 +13,7 @@
             elementFormDefault="qualified"
             attributeFormDefault="unqualified"
             version="1.0">
-            
+
             <xsd:element name="flightRequest">
                 <xsd:complexType>
                     <xsd:sequence>
@@ -45,7 +45,7 @@
         <wsdl:documentation>Flight Response</wsdl:documentation>
         <wsdl:part name="body" element="flightResponse" />
     </wsdl:message>
-    
+
     <wsdl:portType name="TravelAgentPort">
         <wsdl:operation name="listFlights">
             <wsdl:documentation>Provides the list of flights</wsdl:documentation>
@@ -53,7 +53,7 @@
             <wsdl:output message="flightResponse" />
         </wsdl:operation>
     </wsdl:portType>
-    
+
     <wsdl:binding name="TravelAgentBinding" type="TravelAgentPort">
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
         <wsdl:operation name="listFlights">

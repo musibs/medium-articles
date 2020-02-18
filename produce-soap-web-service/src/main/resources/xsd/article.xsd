@@ -1,0 +1,29 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="https://medium.com/article"
+            targetNamespace="https://medium.com/article"
+            elementFormDefault="qualified">
+
+    <xsd:element name="getArticleRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="id" type="xsd:int" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="getArticleResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="article" type="tns:article" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="article">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:int" />
+            <xsd:element name="name" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>
