@@ -5,6 +5,8 @@ import io.tbc.spring.ws.article.client.ArticleClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
+import org.springframework.ws.client.support.interceptor.ClientInterceptor;
+import org.springframework.ws.soap.security.wss4j2.Wss4jSecurityInterceptor;
 
 /**
  * @author somnath.musib
@@ -20,7 +22,7 @@ public class SoapClientConfig {
     }
 
     @Bean
-    public ArticleClient articleClient(Jaxb2Marshaller jaxb2Marshaller){
+    public ArticleClient articleClient(Jaxb2Marshaller jaxb2Marshaller) {
         ArticleClient articleClient = new ArticleClient();
         articleClient.setDefaultUri("http://localhost:8080/ws/article");
         articleClient.setMarshaller(jaxb2Marshaller);
