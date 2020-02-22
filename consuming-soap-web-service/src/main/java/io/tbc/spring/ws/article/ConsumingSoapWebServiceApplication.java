@@ -15,7 +15,7 @@ public class ConsumingSoapWebServiceApplication {
         SpringApplication.run(ConsumingSoapWebServiceApplication.class, args);
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(SoapClientConfig.class);
         ArticleClient articleClient = annotationConfigApplicationContext.getBean(ArticleClient.class);
-        System.out.println(articleClient.getArticle(1).getArticle().getName());
+        System.out.println(articleClient.getArticle(2).getArticle().getName());
     }
 
 }
