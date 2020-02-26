@@ -3,10 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.4.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>io.tbc.medium</groupId>
+        <artifactId>medium-articles</artifactId>
+        <version>1.0.0</version>
     </parent>
     <groupId>io.tbc.spring.ws</groupId>
     <artifactId>spring-soap-digital-certificate-auth</artifactId>
