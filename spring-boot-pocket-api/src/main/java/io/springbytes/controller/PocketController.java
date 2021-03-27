@@ -43,7 +43,7 @@ public class PocketController {
         return pocketRepository.save(pocket);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void deletePocket(@PathVariable String id) {
         pocketRepository.deleteById(Long.parseLong(id));
     }
