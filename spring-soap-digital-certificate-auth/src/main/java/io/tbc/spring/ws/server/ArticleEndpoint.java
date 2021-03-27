@@ -19,7 +19,7 @@ public class ArticleEndpoint {
 
     @ResponsePayload
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getArticleRequest")
-    public GetArticleResponse getArticle(@RequestPayload GetArticleRequest articleRequest){
+    public GetArticleResponse getArticle(@RequestPayload GetArticleRequest articleRequest) {
         Article article = new Article();
         article.setId(1);
         article.setName("Publish a SOAP Web Service With Spring Boot");

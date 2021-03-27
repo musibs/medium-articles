@@ -38,15 +38,15 @@ public class SoapServerConfiguration extends WsConfigurerAdapter {
     }
 
     @Bean
-    public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext applicationContext){
+    public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext applicationContext) {
         MessageDispatcherServlet messageDispatcherServlet = new MessageDispatcherServlet();
         messageDispatcherServlet.setApplicationContext(applicationContext);
         messageDispatcherServlet.setTransformSchemaLocations(true);
         return new ServletRegistrationBean<>(messageDispatcherServlet);
     }
 
-    @Bean(name="article")
-    public Wsdl11Definition wsdl11Definition(XsdSchema xsdSchema){
+    @Bean(name = "article")
+    public Wsdl11Definition wsdl11Definition(XsdSchema xsdSchema) {
         DefaultWsdl11Definition defaultWsdl11Definition = new DefaultWsdl11Definition();
         defaultWsdl11Definition.setPortTypeName("ArticlePort");
         defaultWsdl11Definition.setLocationUri("/ws");
@@ -56,7 +56,7 @@ public class SoapServerConfiguration extends WsConfigurerAdapter {
     }
 
     @Bean
-    public XsdSchema xsdSchema(){
+    public XsdSchema xsdSchema() {
         return new SimpleXsdSchema(new ClassPathResource("xsd/article.xsd"));
     }
 

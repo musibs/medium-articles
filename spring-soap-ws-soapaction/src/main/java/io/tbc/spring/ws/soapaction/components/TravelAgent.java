@@ -19,11 +19,11 @@ public class TravelAgent {
     private WebServiceTemplate webServiceTemplate;
 
     @Autowired
-    public TravelAgent(WebServiceTemplate webServiceTemplate){
+    public TravelAgent(WebServiceTemplate webServiceTemplate) {
         this.webServiceTemplate = webServiceTemplate;
     }
 
-    public List<BigInteger> listFlights(){
+    public List<BigInteger> listFlights() {
         ObjectFactory objectFactory = new ObjectFactory();
         FlightRequest flightRequest = objectFactory.createFlightRequest();
         Object response = webServiceTemplate.marshalSendAndReceive(flightRequest, new SoapActionCallback("http://medium.com/TravelAgent/listFlights"));

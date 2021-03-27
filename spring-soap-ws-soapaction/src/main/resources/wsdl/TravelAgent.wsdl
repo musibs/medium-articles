@@ -8,18 +8,18 @@
 
     <wsdl:types>
         <xsd:schema
-            targetNameSpace="http://medium.com/types/travelAgent"
-            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            elementFormDefault="qualified"
-            attributeFormDefault="unqualified"
-            version="1.0">
+                targetNameSpace="http://medium.com/types/travelAgent"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                elementFormDefault="qualified"
+                attributeFormDefault="unqualified"
+                version="1.0">
 
             <xsd:element name="flightRequest">
                 <xsd:complexType>
                     <xsd:sequence>
-                        <xsd:element name="travelDate" type="xsd:date" />
-                        <xsd:element name="startCity" type="xsd:string" />
-                        <xsd:element name="endCity" type="xsd:string" />
+                        <xsd:element name="travelDate" type="xsd:date"/>
+                        <xsd:element name="startCity" type="xsd:string"/>
+                        <xsd:element name="endCity" type="xsd:string"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
@@ -37,32 +37,32 @@
 
     <wsdl:message name="flightRequest">
         <wsdl:documentation>Flight Request</wsdl:documentation>
-        <wsdl:part name="body" element="flightRequest" />
+        <wsdl:part name="body" element="flightRequest"/>
     </wsdl:message>
 
 
     <wsdl:message name="flightResponse">
         <wsdl:documentation>Flight Response</wsdl:documentation>
-        <wsdl:part name="body" element="flightResponse" />
+        <wsdl:part name="body" element="flightResponse"/>
     </wsdl:message>
 
     <wsdl:portType name="TravelAgentPort">
         <wsdl:operation name="listFlights">
             <wsdl:documentation>Provides the list of flights</wsdl:documentation>
-            <wsdl:input message="flightRequest" />
-            <wsdl:output message="flightResponse" />
+            <wsdl:input message="flightRequest"/>
+            <wsdl:output message="flightResponse"/>
         </wsdl:operation>
     </wsdl:portType>
 
     <wsdl:binding name="TravelAgentBinding" type="TravelAgentPort">
-        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
         <wsdl:operation name="listFlights">
-            <soap:operation soapAction="http://medium.com/TravelAgent/listFlights" />
+            <soap:operation soapAction="http://medium.com/TravelAgent/listFlights"/>
             <wsdl:input>
-                <soap:body parts="body" use="literal" />
+                <soap:body parts="body" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="body" use="literal" />
+                <soap:body parts="body" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
     </wsdl:binding>

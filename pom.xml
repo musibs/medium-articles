@@ -7,8 +7,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.4.RELEASE</version>
-        <relativePath />
+        <version>2.4.4</version>
+        <relativePath/>
     </parent>
 
     <groupId>io.tbc.medium</groupId>
@@ -23,7 +23,7 @@
     </properties>
 
     <modules>
-		<module>spring-soap-webservice</module>
+        <module>spring-soap-webservice</module>
         <module>spring-boot-wildfly-demo</module>
         <module>produce-soap-web-service</module>
         <module>consuming-soap-web-service</module>
@@ -33,5 +33,6 @@
         <module>spring-soap-digital-certificate-auth-client</module>
         <module>spring-soap-username-password-auth</module>
         <module>spring-soap-username-password-auth-client</module>
+		<module>spring-boot-pocket-api</module>
     </modules>
 </project>

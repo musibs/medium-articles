@@ -19,8 +19,8 @@ public class CustomSoapFaultDefinitionExceptionResolver extends SoapFaultMapping
 
     @Override
     protected void customizeFault(Object endpoint, Exception ex, SoapFault fault) {
-        logger.error("Processing exception "+ex);
-        if(ex instanceof ArticleNotFoundException){
+        logger.error("Processing exception " + ex);
+        if (ex instanceof ArticleNotFoundException) {
             ArticleFault articleFault = ((ArticleNotFoundException) ex).getArticleFault();
             SoapFaultDetail soapFaultDetail = fault.addFaultDetail();
             soapFaultDetail.addFaultDetailElement(CODE).addText(articleFault.getCode());

@@ -15,7 +15,7 @@ public class TravelAgentEndpoint {
 
     @ResponsePayload
     @SoapAction(value = "http://medium.com/TravelAgent/listFlights")
-    public FlightResponse listFlights(MessageContext messageContext){
+    public FlightResponse listFlights(MessageContext messageContext) {
         WebServiceMessage webServiceMessage = messageContext.getRequest();
         SoapMessage soapMessage = (SoapMessage) webServiceMessage;
         System.out.println(soapMessage.getSoapAction());

@@ -14,13 +14,13 @@ public class LocalEndpointInterceptor implements EndpointInterceptor {
 
     @Override
     public boolean handleRequest(MessageContext messageContext, Object endpoint) throws Exception {
-        logger.error("Handling local request. Request message "+messageContext.getRequest().getPayloadSource());
+        logger.error("Handling local request. Request message " + messageContext.getRequest().getPayloadSource());
         return true;
     }
 
     @Override
     public boolean handleResponse(MessageContext messageContext, Object endpoint) throws Exception {
-        logger.error("Handling local response. Request message "+messageContext.getRequest().getPayloadResult());
+        logger.error("Handling local response. Request message " + messageContext.getRequest().getPayloadResult());
         return true;
     }
 

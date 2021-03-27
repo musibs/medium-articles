@@ -16,14 +16,14 @@ import org.springframework.ws.wsdl.wsdl11.Wsdl11Definition;
 public class SoapWebServiceConfiguration extends WsConfigurerAdapter {
 
     @Bean
-    public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext applicationContext){
+    public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext applicationContext) {
         MessageDispatcherServlet messageDispatcherServlet = new MessageDispatcherServlet();
         messageDispatcherServlet.setApplicationContext(applicationContext);
         return new ServletRegistrationBean<>(messageDispatcherServlet, "/medium/ws/*");
     }
 
     @Bean(name = "calculatorDemo")
-    public Wsdl11Definition wsdl11Definition(){
+    public Wsdl11Definition wsdl11Definition() {
         SimpleWsdl11Definition simpleWsdl11Definition = new SimpleWsdl11Definition();
         simpleWsdl11Definition.setWsdl(new ClassPathResource("/wsdl/calculator.wsdl"));
         return simpleWsdl11Definition;

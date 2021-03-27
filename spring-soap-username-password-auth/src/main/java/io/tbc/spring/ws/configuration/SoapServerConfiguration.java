@@ -29,15 +29,15 @@ public class SoapServerConfiguration extends WsConfigurerAdapter {
     private static final String NAMESPACE_URI = "https://medium.com/article";
 
     @Bean
-    public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext applicationContext){
+    public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext applicationContext) {
         MessageDispatcherServlet messageDispatcherServlet = new MessageDispatcherServlet();
         messageDispatcherServlet.setApplicationContext(applicationContext);
         messageDispatcherServlet.setTransformSchemaLocations(true);
         return new ServletRegistrationBean<>(messageDispatcherServlet);
     }
 
-    @Bean(name="article")
-    public Wsdl11Definition wsdl11Definition(XsdSchema xsdSchema){
+    @Bean(name = "article")
+    public Wsdl11Definition wsdl11Definition(XsdSchema xsdSchema) {
         DefaultWsdl11Definition defaultWsdl11Definition = new DefaultWsdl11Definition();
         defaultWsdl11Definition.setPortTypeName("ArticlePort");
         defaultWsdl11Definition.setLocationUri("/ws");
@@ -47,12 +47,12 @@ public class SoapServerConfiguration extends WsConfigurerAdapter {
     }
 
     @Bean
-    public XsdSchema xsdSchema(){
+    public XsdSchema xsdSchema() {
         return new SimpleXsdSchema(new ClassPathResource("xsd/article.xsd"));
     }
 
     @Bean
-    public SimplePasswordValidationCallbackHandler simplePasswordValidationCallbackHandler(){
+    public SimplePasswordValidationCallbackHandler simplePasswordValidationCallbackHandler() {
         SimplePasswordValidationCallbackHandler simplePasswordValidationCallbackHandler = new SimplePasswordValidationCallbackHandler();
         Properties properties = new Properties();
         properties.setProperty("user", "password");
@@ -62,7 +62,7 @@ public class SoapServerConfiguration extends WsConfigurerAdapter {
     }
 
     @Bean
-    public Wss4jSecurityInterceptor securityInterceptor(){
+    public Wss4jSecurityInterceptor securityInterceptor() {
         Wss4jSecurityInterceptor wss4jSecurityInterceptor = new Wss4jSecurityInterceptor();
         wss4jSecurityInterceptor.setValidationActions("Timestamp UsernameToken");
         wss4jSecurityInterceptor.setValidationCallbackHandler(simplePasswordValidationCallbackHandler());

@@ -1,4 +1,5 @@
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cal="http://medium.com/types/calculator">
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:cal="http://medium.com/types/calculator">
     <soapenv:Header/>
     <soapenv:Body>
         <cal:AdditionInput>

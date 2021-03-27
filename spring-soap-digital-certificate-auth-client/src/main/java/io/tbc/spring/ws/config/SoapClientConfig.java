@@ -18,7 +18,7 @@ import java.io.IOException;
 public class SoapClientConfig {
 
     @Bean
-    public Jaxb2Marshaller marshaller(){
+    public Jaxb2Marshaller marshaller() {
         Jaxb2Marshaller jaxb2Marshaller = new Jaxb2Marshaller();
         jaxb2Marshaller.setContextPath("com.medium.article");
         return jaxb2Marshaller;
@@ -53,6 +53,7 @@ public class SoapClientConfig {
 
         return wss4jSecurityInterceptor;
     }
+
     @Bean
     public CryptoFactoryBean cryptoFactoryBean() throws IOException {
         CryptoFactoryBean cryptoFactoryBean = new CryptoFactoryBean();

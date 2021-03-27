@@ -18,14 +18,14 @@ import java.util.Properties;
 public class SoapClientConfig {
 
     @Bean
-    public Jaxb2Marshaller marshaller(){
+    public Jaxb2Marshaller marshaller() {
         Jaxb2Marshaller jaxb2Marshaller = new Jaxb2Marshaller();
         jaxb2Marshaller.setContextPath("com.medium.article");
         return jaxb2Marshaller;
     }
 
     @Bean
-    public ArticleClient articleClient(Jaxb2Marshaller jaxb2Marshaller){
+    public ArticleClient articleClient(Jaxb2Marshaller jaxb2Marshaller) {
         ArticleClient articleClient = new ArticleClient();
         articleClient.setDefaultUri("http://localhost:9090/ws/article");
         articleClient.setMarshaller(jaxb2Marshaller);

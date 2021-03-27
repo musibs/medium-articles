@@ -21,11 +21,11 @@ public class ArticleEndpoint {
 
     @ResponsePayload
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getArticleRequest")
-    public GetArticleResponse getArticle(@RequestPayload GetArticleRequest articleRequest){
+    public GetArticleResponse getArticle(@RequestPayload GetArticleRequest articleRequest) {
 
-        if(articleRequest.getId() != 1){
+        if (articleRequest.getId() != 1) {
             throw new ArticleNotFoundException("Exception Occurred ",
-                    new ArticleFault("NOT_FOUND", "Article with id "+articleRequest.getId()+" does not exists"));
+                    new ArticleFault("NOT_FOUND", "Article with id " + articleRequest.getId() + " does not exists"));
         }
 
         Article article = new Article();

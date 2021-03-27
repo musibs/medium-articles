@@ -14,7 +14,8 @@ public class ArticleFault {
     private String code;
     private String description;
 
-    public ArticleFault() {}
+    public ArticleFault() {
+    }
 
     public ArticleFault(String code, String description) {
         this.code = code;

@@ -14,13 +14,13 @@ public class GlobalEndpointInterceptor implements EndpointInterceptor {
 
     @Override
     public boolean handleRequest(MessageContext messageContext, Object endpoint) throws Exception {
-        logger.error("Global Request handling: Request message "+messageContext.getRequest().getPayloadResult());
+        logger.error("Global Request handling: Request message " + messageContext.getRequest().getPayloadResult());
         return true;
     }
 
     @Override
     public boolean handleResponse(MessageContext messageContext, Object endpoint) throws Exception {
-        logger.error("Global response handling: Response message "+messageContext.getRequest().getPayloadResult());
+        logger.error("Global response handling: Response message " + messageContext.getRequest().getPayloadResult());
         return true;
     }
 
