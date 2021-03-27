@@ -34,5 +34,7 @@
         <module>spring-soap-username-password-auth</module>
         <module>spring-soap-username-password-auth-client</module>
 		<module>spring-boot-pocket-api</module>
+		<module>spring-boot-pocket-api-actuator</module>
+		
     </modules>
 </project>
