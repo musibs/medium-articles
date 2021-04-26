@@ -30,8 +30,7 @@
 		<module>produce-soap-web-service-interceptors</module>
 		<module>spring-boot-kafka-demo</module>
         <module>consuming-soap-web-service</module>
-        <module>produce-soap-web-service-exceptions</module>
-        <module>produce-soap-web-service-interceptors</module>
+	    <module>produce-soap-web-service-exceptions</module>
         <module>spring-soap-digital-certificate-auth</module>
         <module>spring-soap-digital-certificate-auth-client</module>
         <module>spring-soap-username-password-auth</module>
