@@ -26,7 +26,7 @@
         <module>spring-soap-webservice</module>
         <module>spring-boot-wildfly-demo</module>
         <module>produce-soap-web-service</module>
-		<module>produce-soap-web-service-exceptions</module>
+		
 		<module>produce-soap-web-service-interceptors</module>
 		<module>spring-boot-kafka-demo</module>
         <module>consuming-soap-web-service</module>
