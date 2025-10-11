@@ -13,10 +13,6 @@
     <name>spring-boot-pocket-api-querydsl</name>
     <description>Pocket API</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

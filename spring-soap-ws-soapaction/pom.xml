@@ -14,7 +14,6 @@
     <description>Spring SOAP Web Service With SoapAction</description>
 
     <properties>
-        <java.version>1.8</java.version>
         <maven.jaxb2.plugin.version>0.14.0</maven.jaxb2.plugin.version>
     </properties>
 

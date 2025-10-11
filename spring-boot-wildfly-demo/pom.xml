@@ -14,7 +14,6 @@
     <description>Spring Boot Wildfly Demo</description>
 
     <properties>
-        <java.version>1.8</java.version>
         <deploy.jboss.host>127.0.0.1</deploy.jboss.host>
         <deploy.jboss.port>9990</deploy.jboss.port>
         <deploy.jboss.username>wildfly</deploy.jboss.username>
